@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { DiceRoll } from './components/DiceRoll';
+import { Modal } from './components/Modal';
 
 function App() {
+  const [showModal, setShowModal] = useState<boolean>(false);
+  // const [open, setOpen] = useState(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
+  const showModalFunc = () => {
+    setShowModal(true);
+  };
+
+  const hideModalFunc = () => {
+    setShowModal(false);
+  };
+
+  const modal = () => {
+    if (showModal) {
+      return  (<Modal show={showModal} handleClose={hideModalFunc} header="Instructions"/>)
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Dice Roll Task List</h1>
+      <p>Use chance to determine what to do on your task list.</p>
+      <button type="button" className="marginBottom bold button buttonPrimary"onClick={showModalFunc}>
+        Instructions
+      </button>
+      <div>
+        {modal()}
+      </div>
+      <DiceRoll />
     </div>
   );
 }
