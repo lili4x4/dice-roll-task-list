@@ -1,0 +1,70 @@
+.center {
+    margin: auto;
+}
+
+.taskTitle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    /* border: 2px solid green; */
+    width: 80%;
+    margin: auto;
+    font-weight: bold;
+}
+
+.taskTitle1 {
+    grid-column: 1 / 2;
+}
+
+.taskTitle2 {
+    grid-column: 2 / 3;
+}
+
+.taskList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    padding: 0px;
+    width: 80%;
+    /* border: 2px solid blue; */
+    /* justify-content:left;
+    justify-items: left; */
+    align-items: center;
+    margin: auto;
+}
+
+.taskListItem1 {
+    grid-column: 1 / 4;
+    /* border: 2px solid red; */
+}
+
+.taskContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    /* width: 500px; */
+}
+
+.taskContentItem1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.taskContentItem2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.taskContentItem3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#editTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
