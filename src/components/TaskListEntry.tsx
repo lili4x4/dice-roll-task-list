@@ -11,10 +11,12 @@ export const TaskListEntry: React.FC <Props> = ({onAddTask}) => {
     const [text, setText] = useState('');
 
     const addTaskAndReset = () => {
+        const taskNameInput = document.getElementById("taskNameInput");
         setText('');
         setStartRange('');
         setEndRange('');
         onAddTask(text, startRange, endRange);
+        taskNameInput!.focus();
     }
 
     const handleEnterKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -27,6 +29,7 @@ export const TaskListEntry: React.FC <Props> = ({onAddTask}) => {
         <>
             <input
                 className="input inputName"
+                id="taskNameInput"
                 placeholder="Task"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
