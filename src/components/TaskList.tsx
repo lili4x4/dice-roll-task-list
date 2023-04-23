@@ -43,6 +43,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
         <div id='editTask'>
             <input
             value={task.name}
+            className="input inputName"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -52,6 +53,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.start}
+            className="input inputNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -61,6 +63,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.end}
+            className="input inputNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -68,7 +71,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
                 });
             }}
             />
-            <button className="button buttonPrimary" onClick={() => setIsEditing(false)}>Save</button>
+            <button className="button buttonPrimary addButton" onClick={() => setIsEditing(false)}>Save</button>
         </div>
         );
     } else {
