@@ -26,25 +26,30 @@ export const TaskListEntry: React.FC <Props> = ({onAddTask}) => {
     return (
         <>
             <input
-                placeholder="Add task"
+                className="input inputName"
+                placeholder="Task"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 onKeyDown={handleEnterKeyPress}
             />
             <input
+                className="input inputNumber"
                 placeholder="Starting number"
+                type="number" min="1" max="20"
                 value={startRange}
                 onChange={(e) => setStartRange(e.target.value)}
                 onKeyDown={handleEnterKeyPress}
             />
-                        <input
+            <input
+                className="input inputNumber"
                 placeholder="Ending number"
+                type="number" min="1" max="20"
                 value={endRange}
                 onChange={(e) => setEndRange(e.target.value)}
                 onKeyDown={handleEnterKeyPress}
             />
             <button
-                className="button buttonPrimary"
+                className="button buttonPrimary addButton"
                 onClick={addTaskAndReset}>
                 Add
             </button>

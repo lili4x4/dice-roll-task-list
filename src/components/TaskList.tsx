@@ -23,7 +23,7 @@ interface TaskProps {
 export const TaskList: React.FC <TaskListProps> = ({tasks, onChangeTask, onDeleteTask}) => {
     return (
         <div className='center'>
-            <h4>Tasks</h4>
+            <h2 className='tasksTitle'>Tasks</h2>
             <div className='taskTitle'>
                 <p className='taskTitle1'>Task Name</p>
                 <p className='taskTitle2'>Range</p>
