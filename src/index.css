@@ -2,6 +2,7 @@
   --primary: #040c4f;
   --accent: #8b0055;
   --text: #01020b;
+  --white: #f7f9fd;
 }
 
 body {
@@ -11,8 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f9fd;
-  color: #01041e;
+  background-color: var(--white);
   
 }
 

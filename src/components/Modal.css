@@ -40,10 +40,13 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    border: 0;
+    background-color: var(--primary);
+    color: var(--white);
 }
 .close:hover,
 .close:focus {
-    color: #000;
+    color: var(--accent);
     text-decoration: none;
     cursor: pointer;
 }
@@ -67,3 +70,18 @@
 .display-none {
   display: none;
 }
+
+@media screen and (max-width: 480px) {
+    
+      .modal {
+        padding-top: 45px;
+      }
+
+      .modal-content {
+        width: 75%;
+      }
+
+      .modal-body {
+        padding: 0px 16px;
+      }
+    }

@@ -50,3 +50,26 @@
     width: 10em;
 }
 
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px; /* set the base font size for the body */
+      }
+      
+      /* set the font size for all text elements within the body */
+      body * {
+        font-size: 0.8rem;
+      }
+      .header {
+        background-color: var(--primary);
+        color: var(--white);
+        margin: 0;
+        padding: 1em;
+        font-size: 1.3em;
+      }
+      .inputName {
+        width: 22.5em;
+    }
+    .button {
+        padding: .5em .8em;
+    }
+}

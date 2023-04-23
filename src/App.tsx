@@ -24,8 +24,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Dice Roll Task List</h1>
-      <p>Use chance to determine what to do on your task list.</p>
+      <h1 className="header">Dice Roll Task List</h1>
+      <p>Use chance to determine which task to do</p>
       <button type="button" className="marginBottom bold button buttonPrimary"onClick={showModalFunc}>
         Instructions
       </button>

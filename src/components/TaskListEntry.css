@@ -3,4 +3,10 @@
 }
 
 
+@media screen and (max-width: 480px) {
+    .addButton {
+        padding: .7em 11em;
+    }
+    }
+
 

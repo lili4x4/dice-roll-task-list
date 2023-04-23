@@ -82,7 +82,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
                 <p className='taskContentItem2'>{task.start}-{task.end}</p>
                 <div className='taskContentItem3'>
                     <button className='button buttonPrimary' onClick={() => setIsEditing(true)}>Edit</button>
-                    <button className="button buttonSecondary" onClick={() => onDelete(task.id)}>Delete</button>
+                    <button className="button buttonSecondary" onClick={() => onDelete(task.id)}>X</button>
                 </div>
             </div>
         </>
