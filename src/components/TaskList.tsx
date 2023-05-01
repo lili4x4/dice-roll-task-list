@@ -38,12 +38,13 @@ export const TaskList: React.FC <TaskListProps> = ({tasks, onChangeTask, onDelet
 const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
     const [isEditing, setIsEditing] = useState(false);
     let taskContent;
+
     if (isEditing) {
         taskContent = (
         <div id='editTask'>
             <input
             value={task.name}
-            className="input inputName"
+            className="input saveName"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -53,7 +54,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.start}
-            className="input inputNumber"
+            className="input saveNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -63,7 +64,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.end}
-            className="input inputNumber"
+            className="input saveNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -71,7 +72,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
                 });
             }}
             />
-            <button className="button buttonPrimary addButton" onClick={() => setIsEditing(false)}>Save</button>
+            <button className="button buttonPrimary" onClick={() => setIsEditing(false)}>Save</button>
         </div>
         );
     } else {
@@ -89,14 +90,12 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
         );
     }
     return (
-        <>
-            <div className='center' >
-            <label className='taskList'>
-            <div className='taskListItem1'>
-                {taskContent}
+        <div className='center' >
+            <div className='taskList'>
+                <div className='taskListItem1'>
+                    {taskContent}
+                </div>
             </div>
-            </label>
-            </div>
-        </>
+        </div>
     );
     }
