@@ -2,17 +2,6 @@
     margin: auto;
 }
 
-#editTask {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.saveNumber {
-    width: 2em;
-}
-
 .tasksTitle {
     font-style: italic;
     margin-bottom: .2em;
@@ -79,4 +68,10 @@
     grid-column-end: 4;
 }
 
+#editTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 

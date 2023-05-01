@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './TaskList.css'
 
 interface taskList {
@@ -38,13 +38,6 @@ export const TaskList: React.FC <TaskListProps> = ({tasks, onChangeTask, onDelet
 const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
     const [isEditing, setIsEditing] = useState(false);
     let taskContent;
-
-    const onSaveTask = () => {
-        console.log("Save button pressed");
-        setIsEditing((prevIsEditing) => !prevIsEditing);
-        console.log(isEditing);
-    }
-
     if (isEditing) {
         taskContent = (
         <div id='editTask'>
@@ -60,7 +53,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.start}
-            className="input saveNumber"
+            className="input inputNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -70,7 +63,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
             />
             <input
             value={task.end}
-            className="input saveNumber"
+            className="input inputNumber"
             onChange={(e) => {
                 onChange({
                 ...task,
@@ -78,7 +71,7 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
                 });
             }}
             />
-            <button className="button buttonPrimary" onClick={onSaveTask}>Save</button>
+            <button className="button buttonPrimary addButton" onClick={() => setIsEditing(false)}>Save</button>
         </div>
         );
     } else {
@@ -95,15 +88,14 @@ const Task: React.FC <TaskProps> = ({task, onChange, onDelete}) => {
         </>
         );
     }
-
     return (
         <>
             <div className='center' >
-                <label className='taskList'>
-                    <div className='taskListItem1'>
-                        {taskContent}
-                    </div>
-                </label>
+            <label className='taskList'>
+            <div className='taskListItem1'>
+                {taskContent}
+            </div>
+            </label>
             </div>
         </>
     );
